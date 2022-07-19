@@ -24,3 +24,7 @@ this presentation.
 > How do I change the font color of the presentation's title? 
 
 Go to `styles.scss` and change the color in *.reveal h1*.
+
+> What do slides look like?
+
+You can see an example [here](https://almeidasilvaf.github.io/quarto_theme/slide_template.html#/title-slide).
