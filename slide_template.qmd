@@ -1,0 +1,39 @@
+---
+title: "A creative and nice title"
+author: "Fabricio Almeida-Silva"
+institute: "VIB-UGent Center for Plant Systems Biology"
+format:
+    revealjs:
+        width: 1600
+        height: 900
+        theme: [default, styles.scss]
+        incremental: true
+        logo: "https://www.psb.ugent.be/themes/custom/minimalplus/logo.svg"
+        footer: "Fabricio Almeida-Silva @almeidasilvaf"
+        highlight-style: "a11y"
+        title-slide-attributes:
+            data-background-image: "figs/vib_logo.png"
+            data-background-size: 30%
+            data-background-position: 95% 50%
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+#| echo: true
+1 + 1
+```
