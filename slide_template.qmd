@@ -2,6 +2,12 @@
 title: "A creative and nice title"
 author: "Fabricio Almeida-Silva"
 institute: "VIB-UGent Center for Plant Systems Biology"
+knitr:
+    opts_chunk: 
+      fig.align: 'center'
+execute:
+    message: false
+    warning: false
 format:
     revealjs:
         self-contained: true
@@ -38,3 +44,153 @@ When you click the **Render** button a presentation will be generated that inclu
 #| echo: true
 1 + 1
 ```
+
+## Columns
+
+::: columns
+::: {.column width="50%"}
+List:
+
+1.  Element 1
+2.  Element 2
+3.  Element 3
+:::
+
+::: {.column width="50%"}
+Right column:
+
+1.  Element 1
+2.  Element 2
+3.  Element 3
+:::
+:::
+
+## Columns with figure
+
+::: columns
+::: {.column width="60%"}
+List:
+
+This text somehow relates to the figure to the right.
+:::
+
+::: {.column width="40%"}
+![vivb_logo](figs/vib_logo.png)
+:::
+:::
+
+## Footnotes
+
+This is how you include footnotes[^1] at the bottom part of the page in slides.
+
+[^1]: Small text at the bottom the page.
+
+## Code and output below
+
+```{r code_output_below}
+#| echo: true
+library(ggplot2)
+library(palmerpenguins)
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) + 
+    geom_boxplot(aes(color = species), width = 0.3, show.legend = FALSE) +
+    geom_jitter(
+        aes(color = species), alpha = 0.5, show.legend = FALSE,
+        position = position_jitter(width = 0.2, seed = 0)
+    ) +
+    scale_color_manual(values = c("darkorange","purple","cyan4")) +
+    labs(x = "Species", y = "Flipper length (mm)") +
+    theme_bw()
+```
+
+## Code and output beside
+
+```{r output_beside}
+#| echo: fenced
+#| output-location: column
+library(ggplot2)
+library(palmerpenguins)
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) + 
+    geom_boxplot(aes(color = species), width = 0.3, show.legend = FALSE) +
+    geom_jitter(
+        aes(color = species), alpha = 0.5, show.legend = FALSE,
+        position = position_jitter(width = 0.2, seed = 0)
+    ) +
+    scale_color_manual(values = c("darkorange","purple","cyan4")) +
+    labs(x = "Species", y = "Flipper length (mm)") +
+    theme_bw()
+```
+
+## Code highlighting
+
+```{r code_highlighting}
+#| echo: fenced
+#| code-line-numbers: 5-8
+library(ggplot2)
+library(palmerpenguins)
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) + 
+    geom_boxplot(aes(color = species), width = 0.3, show.legend = FALSE) +
+    geom_jitter(
+        aes(color = species), alpha = 0.5, show.legend = FALSE,
+        position = position_jitter(width = 0.2, seed = 0)
+    ) +
+    scale_color_manual(values = c("darkorange","purple","cyan4")) +
+    labs(x = "Species", y = "Flipper length (mm)") +
+    theme_bw()
+```
+
+## Panels - tabset
+
+This is an example panel set describing bill lengths of palmer penguins:
+
+::: panel-tabset
+### Adelie
+
+```{r}
+#| echo: true
+summary(penguins$bill_length_mm[penguins$species == "Adelie"])
+```
+
+### Gentoo
+
+```{r}
+#| echo: true
+summary(penguins$bill_length_mm[penguins$species == "Gentoo"])
+```
+
+### Chinstrap
+
+```{r}
+#| echo: true
+summary(penguins$bill_length_mm[penguins$species == "Adelie"])
+```
+:::
+
+
+## Here's where you can find me:
+
+::::: columns
+::: {.column width="40%"}
+<br><br>
+![](figs/find-me-at.png){width='80%'}
+
+:::
+
+::: {.column width="60%"}
+
+<br><br><br>
+
+{{< fa brands twitter >}} [@almeidasilvaf](twitter.com/almeidasilvaf)
+
+{{< fa brands github >}} [almeidasilvaf](github.com/almeidasilvaf)
+
+{{< fa globe >}} [almeidasilvaf.github.io](almeidasilvaf.github.io)
+
+{{< ai google-scholar >}} [Fabricio Almeida-Silva](https://scholar.google.com/citations?user=zlnqH0AAAAAJ&hl=en)
+
+{{< ai orcid >}} [0000-0002-5314-2964](https://orcid.org/0000-0002-5314-2964)
+
+
+
+:::
+
+:::::
